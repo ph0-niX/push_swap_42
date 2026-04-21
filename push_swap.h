@@ -6,7 +6,7 @@
 /*   By: dshcherb <dshcherb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/14 10:54:24 by dshcherb          #+#    #+#             */
-/*   Updated: 2026/04/21 11:25:21 by dshcherb         ###   ########.fr       */
+/*   Updated: 2026/04/21 17:12:46 by dshcherb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,5 +62,10 @@ t_Node	*new_node(int value);
 void	add_node_back(t_Stack *stack, t_Node *new_node);
 void	fill_stack(t_Stack *stack, char **argv);
 t_Node	*pop_stack(t_Stack *stack);
+void	swap_top(t_Stack *stack);
+void	rotate_stack(t_Stack *stack);
+t_Node	*pop_last(t_Stack *stack);
+void	reverse_rotate(t_Stack *stack);
+void	add_node_front(t_Stack *stack, t_Node *new_node);
 
 #endif

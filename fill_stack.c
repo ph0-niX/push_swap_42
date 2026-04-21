@@ -6,7 +6,7 @@
 /*   By: dshcherb <dshcherb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/17 13:43:56 by dshcherb          #+#    #+#             */
-/*   Updated: 2026/04/21 12:34:15 by dshcherb         ###   ########.fr       */
+/*   Updated: 2026/04/21 17:47:10 by dshcherb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,25 @@ void	add_node_back(t_Stack *stack, t_Node *new_node)
 		stack->tail->next = new_node;
 		new_node->prev = stack->tail;
 		stack->tail = new_node;
+		new_node->next = NULL;
+		stack->size++;
+	}
+}
+
+void	add_node_front(t_Stack *stack, t_Node *new_node)
+{
+	if (!stack->head)
+	{
+		stack->head = new_node;
+		stack->tail = new_node;
+		stack->size++;
+	}
+	else
+	{
+		new_node->next = stack->head;
+		stack->head->prev = new_node;
+		stack->head = new_node;
+		new_node->prev = NULL;
 		stack->size++;
 	}
 }
