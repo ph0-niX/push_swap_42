@@ -3,7 +3,10 @@ CC = cc
 CFLAGS = -Wextra -Werror -Wall -Iinclude
 
 SRCS = push_swap.c \
-	add_info.c
+	add_info.c \
+	check_input.c \
+	fill_stack.c \
+	stack_ops.c
 
 OBJS = ${SRCS:.c=.o}
 

@@ -1,43 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   stack_ops.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dshcherb <dshcherb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/14 11:09:27 by dshcherb          #+#    #+#             */
-/*   Updated: 2026/04/21 11:43:43 by dshcherb         ###   ########.fr       */
+/*   Created: 2026/04/21 10:54:11 by dshcherb          #+#    #+#             */
+/*   Updated: 2026/04/21 11:45:43 by dshcherb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	print_stack(t_Stack *stack)
+t_Node	*pop_stack(t_Stack *stack)
 {
 	t_Node	*tmp;
 
-	tmp = stack->head;
-	while (tmp)
+	tmp = NULL;
+	if (stack->size > 0)
 	{
-		ft_printf("%d\n", tmp->value);
-		tmp = tmp->next;
+		tmp = stack->head;
+		stack->head = stack->head->next;
 	}
-}
-
-int	main(int argc, char **argv)
-{
-	t_Stack	stack_a;
-	// t_Stack	*stack_b;
-	t_Info		info;
-	// t_Count_op	count_op;
-
-	(void) argc;
-	add_info(argv, &info);
-	check_input(argv);
-	init_stack(&stack_a);
-	fill_stack(&stack_a, argv);
-	print_stack(&stack_a);
-	pop_stack(&stack_a);
-	print_stack(&stack_a);
-	return (0);
+	else
+		ft_printf("Stack is already empty.\n");
+	return (tmp);
 }
