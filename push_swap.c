@@ -6,7 +6,7 @@
 /*   By: dshcherb <dshcherb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/14 11:09:27 by dshcherb          #+#    #+#             */
-/*   Updated: 2026/04/21 17:49:18 by dshcherb         ###   ########.fr       */
+/*   Updated: 2026/04/22 17:02:43 by dshcherb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,10 @@ void	print_stack(t_Stack *stack)
 
 int	main(int argc, char **argv)
 {
-	t_Stack	stack_a;
-	// t_Stack	*stack_b;
+	t_Stack		stack_a;
+	// t_Stack		stack_b;
 	t_Info		info;
-	// t_Count_op	count_op;
+	t_Count_op	count_op;
 
 	(void) argc;
 	add_info(argv, &info);
@@ -40,11 +40,24 @@ int	main(int argc, char **argv)
 	// print_stack(&stack_a);
 	// pop_stack(&stack_a);
 	// print_stack(&stack_a);
-	// swap_top(&stack_a);
+	// swap_top(&stack_a, &count_op, 'a');
 	// print_stack(&stack_a);
-	// rotate_stack(&stack_a);
+	rotate_stack(&stack_a, &count_op, 'b');
 	// print_stack(&stack_a);
 	// reverse_rotate(&stack_a);
 	// print_stack(&stack_a);
+	// init_stack(&stack_b);
+	// printf("A_head: %p\n", stack_a.head);
+	// printf("B_head: %p\n", stack_b.head);
+	// push(&stack_a, &stack_b, &count_op, 'b');
+	// push(&stack_a, &stack_b, &count_op, 'b');
+	// push(&stack_a, &stack_b, &count_op, 'b');
+	// printf("A_head: %p\n", stack_a.head);
+	// printf("B_head: %p\n", stack_b.head);
+	print_stack(&stack_a);
+	// print_stack(&stack_b);
+	ft_printf("Total ops: %d\n", count_op.total_operations);
+	ft_printf("pb: %d\n", count_op.pb);
+	ft_printf("pa: %d\n", count_op.pa);
 	return (0);
 }
