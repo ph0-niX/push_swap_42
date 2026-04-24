@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dshcherb <dshcherb@student.42.fr>          +#+  +:+       +#+        */
+/*   By: iyazykov <iyazykov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/14 11:09:27 by dshcherb          #+#    #+#             */
-/*   Updated: 2026/04/24 12:30:26 by dshcherb         ###   ########.fr       */
+/*   Updated: 2026/04/24 12:45:16 by iyazykov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,7 @@ int	main(int argc, char **argv)
 	//fill_stack(&stack_a, argc, argv);
 	put_index(&stack_a);
 	print_stack(&stack_a);
+	chunk_sorting(&stack_a, &stack_b);
 	// pop_stack(&stack_a);
 	// print_stack(&stack_a);
 	print_stack(&stack_a);
