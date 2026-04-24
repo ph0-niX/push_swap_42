@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dshcherb <dshcherb@student.42.fr>          +#+  +:+       +#+        */
+/*   By: iyazykov <iyazykov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/14 10:54:24 by dshcherb          #+#    #+#             */
-/*   Updated: 2026/04/22 16:57:22 by dshcherb         ###   ########.fr       */
+/*   Updated: 2026/04/24 11:04:14 by iyazykov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,11 +56,12 @@ typedef struct Count_op
 
 void	add_info(char **argv, t_Info *info);
 void	print_error(void);
-int		check_input(char **argv);
+int		check_input(char **argv, int argc);
+int		is_flag(char **argv);
 void	init_stack(t_Stack *stack);
 t_Node	*new_node(int value);
 void	add_node_back(t_Stack *stack, t_Node *new_node);
-void	fill_stack(t_Stack *stack, char **argv);
+void	fill_stack(t_Stack *stack, int argc, char **argv);
 t_Node	*pop_stack(t_Stack *stack);
 void	swap_top(t_Stack *stack, t_Count_op *counter, char c);
 void	rotate_stack(t_Stack *stack, t_Count_op *counter, char c);
@@ -68,5 +69,6 @@ t_Node	*pop_last(t_Stack *stack);
 void	reverse_rotate(t_Stack *stack, t_Count_op *counter, char c);
 void	add_node_front(t_Stack *stack, t_Node *new_node);
 void	push(t_Stack *stack_a, t_Stack *stack_b, t_Count_op *counter, char c);
+void	put_index(t_Stack *stack);
 
 #endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_input.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dshcherb <dshcherb@student.42.fr>          +#+  +:+       +#+        */
+/*   By: iyazykov <iyazykov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/16 12:59:05 by dshcherb          #+#    #+#             */
-/*   Updated: 2026/04/21 13:09:32 by dshcherb         ###   ########.fr       */
+/*   Updated: 2026/04/24 11:26:39 by iyazykov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,36 +52,57 @@ static long	ft_atol(char *argv)
 	return (res * sign);
 }
 
-static void	check_dup(int num, char **argv)
+static void	check_dup(char **argv, int start)
 {
-	int	i;
+	int i;
 
-	i = 1;
-	while (argv[i])
+	i = start;
+	while (argv[start])
 	{
-		if (num == ft_atoi(argv[i]))
-			print_error();
-		i++;
+		while (argv[i])
+		{
+			if (ft_atol(argv[start]) == ft_atoi(argv[i]) && i != start)
+				print_error();
+			i++;
+		}
+		start++;
+		i = start;
 	}
 }
 
+int	is_flag(char **argv)
+{
+	int	i;
+	int	count_flags;
+
+	i = 0;
+	count_flags = 0;
+	while (argv[i])
+	{
+		if (ft_strncmp(argv[i], "--", 2) == 0)
+			count_flags++;
+		i++;
+	}
+	return (count_flags);
+}
+
 //Validation check for input and duplicates
-int	check_input(char **argv)
+int	check_input(char **argv, int argc)
 {
 	int		i;
 	long	num;
+	int		count_flags;
+	char	**tmp_argv;
 
 	i = 1;
 	num = 0;
-	while (argv[i] && ft_strncmp(argv[i], "--", 2) == 0)
-		i++;	
+	count_flags = is_flag(argv);
+	i += count_flags;
 	if (argv[i] == NULL)
 		return (0);
-	while (argv[i])
-	{
-		num = ft_atol(argv[i]);
-		check_dup(num, &argv[i]);
-		i++;
-	}
+	tmp_argv = argv;
+	if ((argc - 1 - count_flags) == 1)
+		tmp_argv = ft_split(argv[i], ' ');
+	check_dup(tmp_argv, i);
 	return (0);
 }

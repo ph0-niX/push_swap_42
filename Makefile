@@ -1,14 +1,16 @@
 NAME = push_swap
 CC = cc
-CFLAGS = -Wextra -Werror -Wall -Iinclude
+# CFLAGS = -Wextra -Werror -Wall -Iinclude -g
 # CFLAGS = -Wextra -Werror -Wall -g
+CFLAGS = -g
 
 SRCS = push_swap.c \
 	add_info.c \
 	check_input.c \
 	fill_stack.c \
 	stack_ops.c \
-	stack_ops_1.c
+	stack_ops_1.c \
+	put_index.c
 
 OBJS = ${SRCS:.c=.o}
 

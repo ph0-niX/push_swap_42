@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fill_stack.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dshcherb <dshcherb@student.42.fr>          +#+  +:+       +#+        */
+/*   By: iyazykov <iyazykov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/17 13:43:56 by dshcherb          #+#    #+#             */
-/*   Updated: 2026/04/22 14:26:49 by dshcherb         ###   ########.fr       */
+/*   Updated: 2026/04/24 11:04:07 by iyazykov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ void	init_stack(t_Stack *stack)
 	stack->tail = NULL;
 	stack->size = 0;
 }
+
 t_Node	*new_node(int value)
 {
 	t_Node	*new_node;
@@ -31,6 +32,7 @@ t_Node	*new_node(int value)
 	new_node->index = -1;
 	return (new_node);
 }
+
 void	add_node_back(t_Stack *stack, t_Node *new_node)
 {
 	if (!stack->head)
@@ -67,20 +69,23 @@ void	add_node_front(t_Stack *stack, t_Node *new_node)
 	}
 }
 
-void	fill_stack(t_Stack *stack, char **argv)
+void	fill_stack(t_Stack *stack, int argc, char **argv)
 {
 	int		i;
-	int		value;
 	t_Node	*node;
+	char	**tmp_argv;
 
 	i = 1;
-	value = 0;
-	while (argv[i] && ft_strncmp(argv[i], "--", 2) == 0)
-		i++;
-	while (argv[i])
+	i += is_flag(argv);
+	tmp_argv = argv;
+	if ((argc - i) == 1)
 	{
-		value = ft_atoi(argv[i]);
-		node = new_node(value);
+		tmp_argv = ft_split(argv[i], ' ');
+		i = 0;
+	}
+	while (tmp_argv[i])
+	{
+		node = new_node(ft_atoi(tmp_argv[i]));
 		add_node_back(stack, node);
 		i++;
 	}
