@@ -8,9 +8,20 @@ SRCS = push_swap.c \
 	add_info.c \
 	check_input.c \
 	fill_stack.c \
-	stack_ops.c \
-	stack_ops_1.c \
-	put_index.c
+	put_index.c \
+	stack_pa.c \
+	stack_pb.c \
+	stack_ra.c \
+	stack_rb.c \
+	stack_rr.c \
+	stack_rra.c \
+	stack_rrb.c \
+	stack_rrr.c \
+	stack_sa.c \
+	stack_sb.c \
+	stack_ss.c \
+	basic_stack_ops_1.c \
+	basic_stack_ops_2.c
 
 OBJS = ${SRCS:.c=.o}
 

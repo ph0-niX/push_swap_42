@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fill_stack.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: iyazykov <iyazykov@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dshcherb <dshcherb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/17 13:43:56 by dshcherb          #+#    #+#             */
-/*   Updated: 2026/04/24 11:04:07 by iyazykov         ###   ########.fr       */
+/*   Updated: 2026/04/24 12:25:54 by dshcherb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,42 +31,6 @@ t_Node	*new_node(int value)
 	new_node->value = value;
 	new_node->index = -1;
 	return (new_node);
-}
-
-void	add_node_back(t_Stack *stack, t_Node *new_node)
-{
-	if (!stack->head)
-	{
-		stack->head = new_node;
-		stack->tail = new_node;
-		stack->size++;
-	}
-	else
-	{
-		stack->tail->next = new_node;
-		new_node->prev = stack->tail;
-		stack->tail = new_node;
-		new_node->next = NULL;
-		stack->size++;
-	}
-}
-
-void	add_node_front(t_Stack *stack, t_Node *new_node)
-{
-	if (!stack->head)
-	{
-		stack->head = new_node;
-		stack->tail = new_node;
-		stack->size++;
-	}
-	else
-	{
-		new_node->next = stack->head;
-		stack->head->prev = new_node;
-		stack->head = new_node;
-		new_node->prev = NULL;
-		stack->size++;
-	}
 }
 
 void	fill_stack(t_Stack *stack, int argc, char **argv)

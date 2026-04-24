@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   add_info.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: iyazykov <iyazykov@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dshcherb <dshcherb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/14 11:38:53 by dshcherb          #+#    #+#             */
-/*   Updated: 2026/04/21 14:51:27 by iyazykov         ###   ########.fr       */
+/*   Updated: 2026/04/24 12:24:37 by dshcherb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,22 @@ static void	init_info(t_Info *info)
 	info->bench = 0;
 	info->disorder = 0;
 	info->strategy = 3;
+}
+
+void	init_count(t_Count_op *counter)
+{
+	counter->pa = 0;
+	counter->pb = 0;
+	counter->ra = 0;
+	counter->rb = 0;
+	counter->rr = 0;
+	counter->rra = 0;
+	counter->rrb = 0;
+	counter->rrr = 0;
+	counter->sa = 0;
+	counter->sb = 0;
+	counter->ss = 0;
+	counter->total_operations = 0;
 }
 
 static void	change_strat(t_Info *info, int strat_num, int *st_count)

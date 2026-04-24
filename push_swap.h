@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: iyazykov <iyazykov@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dshcherb <dshcherb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/14 10:54:24 by dshcherb          #+#    #+#             */
-/*   Updated: 2026/04/24 11:04:14 by iyazykov         ###   ########.fr       */
+/*   Updated: 2026/04/24 12:30:40 by dshcherb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,17 +58,28 @@ void	add_info(char **argv, t_Info *info);
 void	print_error(void);
 int		check_input(char **argv, int argc);
 int		is_flag(char **argv);
+void	fill_stack(t_Stack *stack, int argc, char **argv);
+void	put_index(t_Stack *stack);
+void	init_count(t_Count_op *counter);
 void	init_stack(t_Stack *stack);
 t_Node	*new_node(int value);
 void	add_node_back(t_Stack *stack, t_Node *new_node);
-void	fill_stack(t_Stack *stack, int argc, char **argv);
-t_Node	*pop_stack(t_Stack *stack);
-void	swap_top(t_Stack *stack, t_Count_op *counter, char c);
-void	rotate_stack(t_Stack *stack, t_Count_op *counter, char c);
-t_Node	*pop_last(t_Stack *stack);
-void	reverse_rotate(t_Stack *stack, t_Count_op *counter, char c);
+t_Node	*pop_top(t_Stack *stack);
+void	swap(t_Stack *stack);
+void	rotate(t_Stack *stack);
+t_Node	*pop_bottom(t_Stack *stack);
+void	rev_rotate(t_Stack *stack);
 void	add_node_front(t_Stack *stack, t_Node *new_node);
-void	push(t_Stack *stack_a, t_Stack *stack_b, t_Count_op *counter, char c);
-void	put_index(t_Stack *stack);
+void	sa(t_Stack *stack_a, t_Count_op *counter);
+void	sb(t_Stack *stack_b, t_Count_op *counter);
+void	ss(t_Stack *stack_a, t_Stack *stack_b, t_Count_op *counter);
+void	pa(t_Stack *stack_a, t_Stack *stack_b, t_Count_op *counter);
+void	pb(t_Stack *stack_a, t_Stack *stack_b, t_Count_op *counter);
+void	ra(t_Stack *stack_a, t_Count_op *counter);
+void	rb(t_Stack *stack_b, t_Count_op *counter);
+void	rr(t_Stack *stack_a, t_Stack *stack_b, t_Count_op *counter);
+void	rra(t_Stack *stack_a, t_Count_op *counter);
+void	rrb(t_Stack *stack_b, t_Count_op *counter);
+void	rrr(t_Stack *stack_a, t_Stack *stack_b, t_Count_op *counter);
 
 #endif
