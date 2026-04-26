@@ -6,7 +6,7 @@
 /*   By: iyazykov <iyazykov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/14 11:09:27 by dshcherb          #+#    #+#             */
-/*   Updated: 2026/04/24 15:09:57 by iyazykov         ###   ########.fr       */
+/*   Updated: 2026/04/26 13:15:06 by iyazykov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,8 @@ int	main(int argc, char **argv)
 	fill_stack(&stack_a, argc, argv);
 	put_index(&stack_a);
 	init_stack(&stack_b);
+	printf("stack_a\n");
+	print_stack(&stack_a);
 	chunk_sorting(&stack_a, &stack_b, &count_op);
 	printf("stack_a\n");
 	print_stack(&stack_a);

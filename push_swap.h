@@ -6,7 +6,7 @@
 /*   By: iyazykov <iyazykov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/14 10:54:24 by dshcherb          #+#    #+#             */
-/*   Updated: 2026/04/24 13:50:24 by iyazykov         ###   ########.fr       */
+/*   Updated: 2026/04/26 14:34:09 by iyazykov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,5 +82,7 @@ void	rra(t_Stack *stack_a, t_Count_op *counter);
 void	rrb(t_Stack *stack_b, t_Count_op *counter);
 void	rrr(t_Stack *stack_a, t_Stack *stack_b, t_Count_op *counter);
 void	chunk_sorting(t_Stack *stack_a, t_Stack *stack_b, t_Count_op *count_op);
+
+void	print_stack(t_Stack *stack);
 
 #endif
