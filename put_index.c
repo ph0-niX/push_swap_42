@@ -6,7 +6,7 @@
 /*   By: iyazykov <iyazykov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/21 17:30:46 by iyazykov          #+#    #+#             */
-/*   Updated: 2026/04/22 15:34:24 by iyazykov         ###   ########.fr       */
+/*   Updated: 2026/04/24 17:27:55 by iyazykov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	put_index(t_Stack *stack)
 
 	tmp = stack->head;
 	tmp_sec = stack->head;
-	i = 0;
+	i = 1;
 	while (tmp)
 	{
 		while (tmp_sec)
@@ -32,6 +32,6 @@ void	put_index(t_Stack *stack)
 		tmp_sec = stack->head;
 		tmp->index = i;
 		tmp = tmp->next;
-		i = 0;
+		i = 1;
 	}
 }

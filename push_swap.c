@@ -6,7 +6,7 @@
 /*   By: iyazykov <iyazykov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/14 11:09:27 by dshcherb          #+#    #+#             */
-/*   Updated: 2026/04/24 12:45:16 by iyazykov         ###   ########.fr       */
+/*   Updated: 2026/04/24 15:09:57 by iyazykov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,11 @@ int	main(int argc, char **argv)
 	t_Info		info;
 	t_Count_op	count_op;
 
-	(void) argc;
-	init_count(&count_op);
-	add_info(argv, &info);
-	check_input(argv, argc);
-	init_stack(&stack_a);
-	fill_stack(&stack_a, argc, argv);
+	// init_count(&count_op);
+	// add_info(argv, &info);
+	// check_input(argv, argc);
+	// init_stack(&stack_a);
+	// fill_stack(&stack_a, argc, argv);
 	// print_stack(&stack_a);
 	// pop_top(&stack_a);
 	// print_stack(&stack_a);
@@ -48,11 +47,11 @@ int	main(int argc, char **argv)
 	// print_stack(&stack_a);
 	// rev_rotate(&stack_a);
 	// print_stack(&stack_a);
-	init_stack(&stack_b);
+	// init_stack(&stack_b);
 	// printf("A_head: %p\n", stack_a.head);
 	// printf("B_head: %p\n", stack_b.head);
-	pb(&stack_a, &stack_b, &count_op);
-	pb(&stack_a, &stack_b, &count_op);
+	// pb(&stack_a, &stack_b, &count_op);
+	// pb(&stack_a, &stack_b, &count_op);
 	// pa(&stack_a, &stack_b, &count_op);
 	// printf("A_head: %p\n", stack_a.head);
 	// printf("B_head: %p\n", stack_b.head);
@@ -62,15 +61,30 @@ int	main(int argc, char **argv)
 	// ft_printf("pb: %d\n", count_op.pb);
 	// ft_printf("pa: %d\n", count_op.pa);
 	//fill_stack(&stack_a, argc, argv);
-	put_index(&stack_a);
-	print_stack(&stack_a);
-	chunk_sorting(&stack_a, &stack_b);
+	// put_index(&stack_a);
+	// print_stack(&stack_a);
+	// chunk_sorting(&stack_a, &stack_b);
 	// pop_stack(&stack_a);
 	// print_stack(&stack_a);
+	// print_stack(&stack_a);
+	// print_stack(&stack_b);
+	// ft_printf("Total ops: %d\n", count_op.total_operations);
+	// ft_printf("pb: %d\n", count_op.pb);
+	// ft_printf("pa: %d\n", count_op.pa);
+
+	init_count(&count_op);
+	add_info(argv, &info);
+	check_input(argv, argc);
+	init_stack(&stack_a);
+	fill_stack(&stack_a, argc, argv);
+	put_index(&stack_a);
+	init_stack(&stack_b);
+	chunk_sorting(&stack_a, &stack_b, &count_op);
+	printf("stack_a\n");
 	print_stack(&stack_a);
+	printf("stack_b\n");
 	print_stack(&stack_b);
-	ft_printf("Total ops: %d\n", count_op.total_operations);
-	ft_printf("pb: %d\n", count_op.pb);
-	ft_printf("pa: %d\n", count_op.pa);
+	printf("%i\n", count_op.total_operations);
+
 	return (0);
 }

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   basic_ops.c                                        :+:      :+:    :+:   */
+/*   basic_stack_ops_1.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dshcherb <dshcherb@student.42.fr>          +#+  +:+       +#+        */
+/*   By: iyazykov <iyazykov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/24 11:14:43 by dshcherb          #+#    #+#             */
-/*   Updated: 2026/04/24 11:19:46 by dshcherb         ###   ########.fr       */
+/*   Updated: 2026/04/25 16:22:00 by iyazykov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ t_Node	*pop_top(t_Stack *stack)
 		stack->size -= 1;
 	}
 	else
-		ft_printf("Stack is already empty.\n");
+		ft_printf("Stack is already empty top.\n");
 	return (tmp);
 }
 
@@ -42,7 +42,7 @@ t_Node	*pop_bottom(t_Stack *stack)
 		stack->size -= 1;
 	}
 	else
-		ft_printf("Stack is already empty.\n");
+		ft_printf("Stack is already empty bottom.\n");
 	return (tmp);
 }
 
@@ -50,13 +50,33 @@ void	swap(t_Stack *stack)
 {
 	int	elem1;
 	int	elem2;
+	int index1;
+	int index2;
 
 	if (stack->size < 2)
 		return ;
+	// if (stack->size > 2)
+	// {
 	elem1 = stack->head->value;
 	elem2 = stack->head->next->value;
+	index1 = stack->head->index;
+	index2 = stack->head->next->index;
 	stack->head->value = elem2;
 	stack->head->next->value = elem1;
+	stack->head->index = index2;
+	stack->head->next->index = index1;
+	// }
+	// else
+	// {
+	// 	t_Node *tmp;
+	// 	tmp = stack->head;
+	// 	stack->head = stack->tail;
+	// 	stack->tail = tmp;
+	// 	stack->head->prev = NULL;
+	// 	stack->tail->next = NULL;
+	// 	stack->head->next = stack->tail;
+	// 	stack->tail->prev = stack->head;
+	// }
 }
 
 void	add_node_back(t_Stack *stack, t_Node *new_node)
