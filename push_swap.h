@@ -6,7 +6,7 @@
 /*   By: iyazykov <iyazykov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/14 10:54:24 by dshcherb          #+#    #+#             */
-/*   Updated: 2026/04/26 14:34:09 by iyazykov         ###   ########.fr       */
+/*   Updated: 2026/04/26 16:19:27 by iyazykov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,10 @@ void	rra(t_Stack *stack_a, t_Count_op *counter);
 void	rrb(t_Stack *stack_b, t_Count_op *counter);
 void	rrr(t_Stack *stack_a, t_Stack *stack_b, t_Count_op *counter);
 void	chunk_sorting(t_Stack *stack_a, t_Stack *stack_b, t_Count_op *count_op);
+void	take_and_push_from_head_b(t_Stack *stack_a, t_Stack *stack_b, t_Count_op *count_op, int counter);
+void	take_and_push_from_tail_b(t_Stack *stack_a, t_Stack *stack_b, t_Count_op *count_op, int counter);
+void	take_and_push_from_head_a(t_Stack *stack_a, t_Stack *stack_b, t_Count_op *count_op, int counter);
+void	take_and_push_from_tail_a(t_Stack *stack_a, t_Stack *stack_b, t_Count_op *count_op, int counter);
 
 void	print_stack(t_Stack *stack);
 

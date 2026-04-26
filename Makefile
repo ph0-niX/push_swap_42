@@ -22,7 +22,9 @@ SRCS = push_swap.c \
 	stack_ss.c \
 	basic_stack_ops_1.c \
 	basic_stack_ops_2.c \
-	chunk_based_sorting.c 
+	chunk_based_sorting.c \
+	extra_op_chunk_sorting_a.c \
+	extra_op_chunk_sorting_b.c 
 
 OBJS = ${SRCS:.c=.o}
 
