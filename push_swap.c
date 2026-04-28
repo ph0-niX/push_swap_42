@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: iyazykov <iyazykov@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dshcherb <dshcherb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/14 11:09:27 by dshcherb          #+#    #+#             */
-/*   Updated: 2026/04/26 13:15:06 by iyazykov         ###   ########.fr       */
+/*   Updated: 2026/04/28 15:00:27 by dshcherb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,12 @@ int	main(int argc, char **argv)
 	// init_stack(&stack_b);
 	// printf("A_head: %p\n", stack_a.head);
 	// printf("B_head: %p\n", stack_b.head);
+	// init_stack(&stack_b);
+	// simple(&stack_a, &stack_b, &count_op);
+	// ft_printf("Total ops: %d\n", count_op.total_operations);
+	// printf("A_head: %p\n", stack_a.head);
+	// printf("B_head: %p\n", stack_b.head);
+	// compute_disorder(&stack_a);
 	// pb(&stack_a, &stack_b, &count_op);
 	// pb(&stack_a, &stack_b, &count_op);
 	// pa(&stack_a, &stack_b, &count_op);

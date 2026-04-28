@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   chunk_based_sorting.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: iyazykov <iyazykov@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dshcherb <dshcherb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/24 11:56:14 by iyazykov          #+#    #+#             */
-/*   Updated: 2026/04/26 16:25:26 by iyazykov         ###   ########.fr       */
+/*   Updated: 2026/04/28 16:41:11 by dshcherb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,10 +54,8 @@ void	find_elem_from_chunk(t_Stack *s_a, t_Stack *s_b, t_Count_op *count_op)
 	int	count_head;
 	int	count_tail;
 	int	chunk_size;
-	int	i;
 
 	chunk_size = take_chunk_size(s_a);
-	i = 0;
 	while (s_a->head)
 	{
 		count_head = take_count(s_a, 1, chunk_size, 1);
@@ -67,7 +65,7 @@ void	find_elem_from_chunk(t_Stack *s_a, t_Stack *s_b, t_Count_op *count_op)
 		else if (count_head > count_tail)
 			take_and_push_from_tail_a(s_a, s_b, count_op, count_tail);
 		if (s_b->head->index < (chunk_size / 2))
-			rb(s_b, count_op);
+		 	rb(s_b, count_op);
 		chunk_size += 1;
 	}
 }

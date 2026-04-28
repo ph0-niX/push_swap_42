@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   basic_stack_ops_1.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: iyazykov <iyazykov@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dshcherb <dshcherb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/24 11:14:43 by dshcherb          #+#    #+#             */
-/*   Updated: 2026/04/25 16:22:00 by iyazykov         ###   ########.fr       */
+/*   Updated: 2026/04/28 16:18:24 by dshcherb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,8 +55,6 @@ void	swap(t_Stack *stack)
 
 	if (stack->size < 2)
 		return ;
-	// if (stack->size > 2)
-	// {
 	elem1 = stack->head->value;
 	elem2 = stack->head->next->value;
 	index1 = stack->head->index;
@@ -65,18 +63,6 @@ void	swap(t_Stack *stack)
 	stack->head->next->value = elem1;
 	stack->head->index = index2;
 	stack->head->next->index = index1;
-	// }
-	// else
-	// {
-	// 	t_Node *tmp;
-	// 	tmp = stack->head;
-	// 	stack->head = stack->tail;
-	// 	stack->tail = tmp;
-	// 	stack->head->prev = NULL;
-	// 	stack->tail->next = NULL;
-	// 	stack->head->next = stack->tail;
-	// 	stack->tail->prev = stack->head;
-	// }
 }
 
 void	add_node_back(t_Stack *stack, t_Node *new_node)

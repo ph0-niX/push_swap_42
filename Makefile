@@ -1,8 +1,8 @@
 NAME = push_swap
 CC = cc
 # CFLAGS = -Wextra -Werror -Wall -Iinclude -g
-# CFLAGS = -Wextra -Werror -Wall -g
-CFLAGS = -g
+CFLAGS = -Wextra -Werror -Wall -g
+#CFLAGS = -g
 
 SRCS = push_swap.c \
 	add_info.c \
@@ -24,7 +24,9 @@ SRCS = push_swap.c \
 	basic_stack_ops_2.c \
 	chunk_based_sorting.c \
 	extra_op_chunk_sorting_a.c \
-	extra_op_chunk_sorting_b.c 
+	extra_op_chunk_sorting_b.c \
+	strat_simple.c \
+	compute_disorder.c
 
 OBJS = ${SRCS:.c=.o}
 
