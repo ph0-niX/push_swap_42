@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dshcherb <dshcherb@student.42.fr>          +#+  +:+       +#+        */
+/*   By: iyazykov <iyazykov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/14 10:54:24 by dshcherb          #+#    #+#             */
-/*   Updated: 2026/04/28 14:59:36 by dshcherb         ###   ########.fr       */
+/*   Updated: 2026/04/29 12:01:58 by iyazykov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,5 +89,6 @@ void	take_and_push_from_tail_a(t_Stack *stack_a, t_Stack *stack_b, t_Count_op *c
 void	print_stack(t_Stack *stack);
 void	simple(t_Stack *stack_a, t_Stack *stack_b, t_Count_op *counter);
 float	compute_disorder(t_Stack *stack_a);
+void	radix_sort(t_Stack *stack_a, t_Stack *stack_b, t_Count_op *count_op);
 
 #endif

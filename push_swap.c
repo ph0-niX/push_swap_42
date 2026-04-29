@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dshcherb <dshcherb@student.42.fr>          +#+  +:+       +#+        */
+/*   By: iyazykov <iyazykov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/14 11:09:27 by dshcherb          #+#    #+#             */
-/*   Updated: 2026/04/28 15:00:27 by dshcherb         ###   ########.fr       */
+/*   Updated: 2026/04/29 17:03:57 by iyazykov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,22 @@ int	main(int argc, char **argv)
 	// ft_printf("pb: %d\n", count_op.pb);
 	// ft_printf("pa: %d\n", count_op.pa);
 
+	// init_count(&count_op);
+	// add_info(argv, &info);
+	// check_input(argv, argc);
+	// init_stack(&stack_a);
+	// fill_stack(&stack_a, argc, argv);
+	// put_index(&stack_a);
+	// init_stack(&stack_b);
+	// printf("stack_a\n");
+	// print_stack(&stack_a);
+	// chunk_sorting(&stack_a, &stack_b, &count_op);
+	// printf("stack_a\n");
+	// print_stack(&stack_a);
+	// printf("stack_b\n");
+	// print_stack(&stack_b);
+	// printf("%i\n", count_op.total_operations);
+
 	init_count(&count_op);
 	add_info(argv, &info);
 	check_input(argv, argc);
@@ -85,13 +101,9 @@ int	main(int argc, char **argv)
 	fill_stack(&stack_a, argc, argv);
 	put_index(&stack_a);
 	init_stack(&stack_b);
+	radix_sort(&stack_a, &stack_b, &count_op);
 	printf("stack_a\n");
 	print_stack(&stack_a);
-	chunk_sorting(&stack_a, &stack_b, &count_op);
-	printf("stack_a\n");
-	print_stack(&stack_a);
-	printf("stack_b\n");
-	print_stack(&stack_b);
 	printf("%i\n", count_op.total_operations);
 
 	return (0);
