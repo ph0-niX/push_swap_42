@@ -6,7 +6,7 @@
 /*   By: dshcherb <dshcherb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/24 14:20:39 by dshcherb          #+#    #+#             */
-/*   Updated: 2026/04/28 14:49:43 by dshcherb         ###   ########.fr       */
+/*   Updated: 2026/04/30 15:02:04 by dshcherb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,8 @@ void	simple(t_Stack *stack_a, t_Stack *stack_b, t_Count_op *counter)
 		min = find_min_value(stack_a);
 		position = find_min_pos(stack_a, min);
 		move_to_top(stack_a, position, counter);
-		//Disorder check: if (disorder == 0) -> break;
+		if (compute_disorder(stack_a) == 0)
+			break ;
 		pb(stack_a, stack_b, counter);
 	}
 	while (stack_b->size > 0)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_input.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: iyazykov <iyazykov@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dshcherb <dshcherb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/16 12:59:05 by dshcherb          #+#    #+#             */
-/*   Updated: 2026/04/24 11:26:39 by iyazykov         ###   ########.fr       */
+/*   Updated: 2026/04/30 16:53:43 by dshcherb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,8 @@ static long	ft_atol(char *argv)
 		res = res * 10 + (argv[i] - '0');
 		i++;
 	}
+	if (!ft_isdigit(argv[i]) && argv[i])
+		print_error();
 	if ((sign == 1 && res > INT_MAX) || (sign == -1 && res < INT_MIN))
 		print_error();
 	return (res * sign);
@@ -96,6 +98,8 @@ int	check_input(char **argv, int argc)
 
 	i = 1;
 	num = 0;
+	if (argc <= 1)
+		exit (0);
 	count_flags = is_flag(argv);
 	i += count_flags;
 	if (argv[i] == NULL)

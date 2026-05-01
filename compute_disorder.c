@@ -6,7 +6,7 @@
 /*   By: dshcherb <dshcherb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/28 12:52:50 by dshcherb          #+#    #+#             */
-/*   Updated: 2026/04/28 13:27:50 by dshcherb         ###   ########.fr       */
+/*   Updated: 2026/04/30 15:26:24 by dshcherb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,19 +17,26 @@ float	compute_disorder(t_Stack *stack_a)
 	float	mistakes;
 	float	pairs;
 	float	disorder;
+	t_Node	*tmp;
 
 	if (!stack_a)
 		return (0);
+	tmp = stack_a->head;
 	mistakes = 0;
 	pairs = 0;
-	while (stack_a->head->next != NULL)
+	while (tmp->next != NULL)
 	{
-		if (stack_a->head->value > stack_a->head->next->value)
+		if (tmp->value > tmp->next->value)
 			mistakes += 1;
-		stack_a->head = stack_a->head->next;
+		tmp = tmp->next;
 		pairs += 1;
 	}
 	disorder = mistakes / pairs;
-	printf("Disorder: %f\n", disorder);
+	printf("Disorder: %.2f\n", disorder);
 	return (disorder);
+}
+
+void	set_disorder(t_Stack *stack_a, t_Info *info)
+{
+	info->disorder = compute_disorder(stack_a);
 }

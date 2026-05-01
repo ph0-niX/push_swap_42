@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: iyazykov <iyazykov@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dshcherb <dshcherb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/14 11:09:27 by dshcherb          #+#    #+#             */
-/*   Updated: 2026/04/29 17:03:57 by iyazykov         ###   ########.fr       */
+/*   Updated: 2026/05/01 11:57:46 by dshcherb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,17 +94,37 @@ int	main(int argc, char **argv)
 	// print_stack(&stack_b);
 	// printf("%i\n", count_op.total_operations);
 
+	// if (argc == 1)
+	// 	return (0);
 	init_count(&count_op);
 	add_info(argv, &info);
 	check_input(argv, argc);
 	init_stack(&stack_a);
 	fill_stack(&stack_a, argc, argv);
+	print_stack(&stack_a);
+	set_disorder(&stack_a, &info);
 	put_index(&stack_a);
 	init_stack(&stack_b);
 	radix_sort(&stack_a, &stack_b, &count_op);
 	printf("stack_a\n");
 	print_stack(&stack_a);
 	printf("%i\n", count_op.total_operations);
+	if (info.strategy == 0)
+		simple(&stack_a, &stack_b, &count_op);
+	else if (info.strategy == 1)
+		chunk_sorting(&stack_a, &stack_b, &count_op);
+	else if (info.strategy == 2)
+		radix_sort(&stack_a, &stack_b, &count_op);
+	else 
+		adaptive(&stack_a, &stack_b, &count_op, &info);
+	printf("stack_a\n");
+	print_stack(&stack_a);
+	// chunk_sorting(&stack_a, &stack_b, &count_op);
+	// printf("stack_a\n");
+	// print_stack(&stack_a);
+	// printf("stack_b\n");
+	// print_stack(&stack_b);
+	// printf("Total operations: %i\n", count_op.total_operations);
 
 	return (0);
 }
