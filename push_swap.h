@@ -6,7 +6,7 @@
 /*   By: dshcherb <dshcherb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/14 10:54:24 by dshcherb          #+#    #+#             */
-/*   Updated: 2026/05/01 11:58:04 by dshcherb         ###   ########.fr       */
+/*   Updated: 2026/05/01 16:42:06 by dshcherb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,5 +92,7 @@ float	compute_disorder(t_Stack *stack_a);
 void	radix_sort(t_Stack *stack_a, t_Stack *stack_b, t_Count_op *count_op);
 void	set_disorder(t_Stack *stack_a, t_Info *info);
 void	adaptive(t_Stack *stack_a, t_Stack *stack_b, t_Count_op *counter, t_Info *info);
+void	pick_strat(t_Stack *stack_a, t_Stack *stack_b, t_Count_op *counter, t_Info *info);
+void	free_stack(t_Stack *stack);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: dshcherb <dshcherb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/24 11:56:14 by iyazykov          #+#    #+#             */
-/*   Updated: 2026/04/28 16:41:11 by dshcherb         ###   ########.fr       */
+/*   Updated: 2026/05/01 16:23:17 by dshcherb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,5 @@ void	find_max_elem(t_Stack *stack_a, t_Stack *stack_b, t_Count_op *count_op)
 void	chunk_sorting(t_Stack *stack_a, t_Stack *stack_b, t_Count_op *count_op)
 {
 	find_elem_from_chunk(stack_a, stack_b, count_op);
-	print_stack(stack_b);
 	find_max_elem(stack_a, stack_b, count_op);
 }

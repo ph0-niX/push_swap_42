@@ -22,7 +22,7 @@ printf $DEF_COLOR"simple "
 if [ "$RES" = "KO" ]; then 
         printf $RED"KO\n"
 else
-        printf $GREEN"OK\n"
+        printf $GREEN"OK\n"$DEF_COLOR
 fi
 
 

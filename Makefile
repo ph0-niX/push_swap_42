@@ -28,7 +28,9 @@ SRCS = push_swap.c \
 	strat_simple.c \
 	radix_sort.c \
 	compute_disorder.c \
-	strat_adaptive.c
+	strat_adaptive.c \
+	pick_strat.c \
+	free_stack.c
 
 OBJS = ${SRCS:.c=.o}
 

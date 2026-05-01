@@ -1,23 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strat_adaptive.c                                   :+:      :+:    :+:   */
+/*   pick_strat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dshcherb <dshcherb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/29 12:12:09 by dshcherb          #+#    #+#             */
-/*   Updated: 2026/05/01 15:59:02 by dshcherb         ###   ########.fr       */
+/*   Created: 2026/05/01 12:44:49 by dshcherb          #+#    #+#             */
+/*   Updated: 2026/05/01 16:08:34 by dshcherb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	adaptive(t_Stack *stack_a, t_Stack *stack_b, t_Count_op *counter, t_Info *info)
+void	pick_strat(t_Stack *stack_a, t_Stack *stack_b, t_Count_op *counter, t_Info *info)
 {
-	if (info->disorder < 0.2 || stack_a->size <= 10)
-		simple(stack_a, stack_b ,counter);
-	else if (info->disorder >= 0.2 && info->disorder < 0.5)
+	
+	if (info->strategy == 0)
+		simple(stack_a, stack_b, counter);
+	else if (info->strategy == 1)
 		chunk_sorting(stack_a, stack_b, counter);
-	else if (info->disorder >= 0.5)
+	else if (info->strategy == 2)
 		radix_sort(stack_a, stack_b, counter);
+	else 
+		adaptive(stack_a, stack_b, counter, info);
 }

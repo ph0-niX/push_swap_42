@@ -6,7 +6,7 @@
 /*   By: dshcherb <dshcherb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/16 12:59:05 by dshcherb          #+#    #+#             */
-/*   Updated: 2026/04/30 16:53:43 by dshcherb         ###   ########.fr       */
+/*   Updated: 2026/05/01 17:13:56 by dshcherb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,6 @@ static int	ft_isspace(char c)
 	if (c == ' ' || (c >= 9 && c <= 13))
 		return (1);
 	return (0);
-}
-
-void	print_error(void)
-{
-	write(2, "Error\n", 7);
-	exit(1);
 }
 
 static long	ft_atol(char *argv)
@@ -49,9 +43,10 @@ static long	ft_atol(char *argv)
 	}
 	if (!ft_isdigit(argv[i]) && argv[i])
 		print_error();
+	res = res * sign;
 	if ((sign == 1 && res > INT_MAX) || (sign == -1 && res < INT_MIN))
 		print_error();
-	return (res * sign);
+	return (res);
 }
 
 static void	check_dup(char **argv, int start)
@@ -106,7 +101,10 @@ int	check_input(char **argv, int argc)
 		return (0);
 	tmp_argv = argv;
 	if ((argc - 1 - count_flags) == 1)
+	{
 		tmp_argv = ft_split(argv[i], ' ');
+		i = 0;
+	}
 	check_dup(tmp_argv, i);
 	return (0);
 }

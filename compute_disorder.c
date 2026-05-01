@@ -6,7 +6,7 @@
 /*   By: dshcherb <dshcherb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/28 12:52:50 by dshcherb          #+#    #+#             */
-/*   Updated: 2026/04/30 15:26:24 by dshcherb         ###   ########.fr       */
+/*   Updated: 2026/05/01 17:29:49 by dshcherb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ float	compute_disorder(t_Stack *stack_a)
 		pairs += 1;
 	}
 	disorder = mistakes / pairs;
-	printf("Disorder: %.2f\n", disorder);
 	return (disorder);
 }
 

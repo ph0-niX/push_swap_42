@@ -1,49 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   basic_stack_ops_2.c                                :+:      :+:    :+:   */
+/*   free_stack.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dshcherb <dshcherb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/24 11:23:37 by dshcherb          #+#    #+#             */
-/*   Updated: 2026/05/01 12:57:57 by dshcherb         ###   ########.fr       */
+/*   Created: 2026/05/01 16:30:38 by dshcherb          #+#    #+#             */
+/*   Updated: 2026/05/01 16:31:48 by dshcherb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	rotate(t_Stack *stack)
+void	free_stack(t_Stack *stack)
 {
 	t_Node	*tmp;
 
-	if (stack->size <= 1)
-		return ;
-	if (stack->size == 2)
-		swap(stack);
-	else
+	while (stack->head)
 	{
-		tmp = pop_top(stack);
-		add_node_back(stack, tmp);
+		tmp = stack->head->next;
+		free(stack->head);
+		stack->head = tmp;
 	}
-}
-
-void	rev_rotate(t_Stack *stack)
-{
-	t_Node	*tmp;
-
-	if (stack->size <=1)
-		return ;
-	if (stack->size == 2)
-		swap(stack);
-	else
-	{
-		tmp = pop_bottom(stack);
-		add_node_front(stack, tmp);
-	}
-}
-
-void	print_error(void)
-{
-	write(2, "Error\n", 7);
-	exit(1);
+	stack->head = NULL;
 }
