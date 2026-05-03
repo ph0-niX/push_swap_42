@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   strat_simple.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dshcherb <dshcherb@student.42.fr>          +#+  +:+       +#+        */
+/*   By: iyazykov <iyazykov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/24 14:20:39 by dshcherb          #+#    #+#             */
-/*   Updated: 2026/04/30 15:02:04 by dshcherb         ###   ########.fr       */
+/*   Updated: 2026/05/03 13:06:57 by iyazykov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,6 @@ static void	move_to_top(t_Stack *stack_a, int position, t_Count_op *counter)
 			i++;
 		}
 	}
-	
 }
 
 void	simple(t_Stack *stack_a, t_Stack *stack_b, t_Count_op *counter)

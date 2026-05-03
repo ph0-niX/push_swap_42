@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   basic_stack_ops_2.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dshcherb <dshcherb@student.42.fr>          +#+  +:+       +#+        */
+/*   By: iyazykov <iyazykov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/24 11:23:37 by dshcherb          #+#    #+#             */
-/*   Updated: 2026/05/01 12:57:57 by dshcherb         ###   ########.fr       */
+/*   Updated: 2026/05/03 13:07:45 by iyazykov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	rev_rotate(t_Stack *stack)
 {
 	t_Node	*tmp;
 
-	if (stack->size <=1)
+	if (stack->size <= 1)
 		return ;
 	if (stack->size == 2)
 		swap(stack);

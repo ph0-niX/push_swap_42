@@ -3,24 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   pick_strat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dshcherb <dshcherb@student.42.fr>          +#+  +:+       +#+        */
+/*   By: iyazykov <iyazykov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/01 12:44:49 by dshcherb          #+#    #+#             */
-/*   Updated: 2026/05/01 16:08:34 by dshcherb         ###   ########.fr       */
+/*   Updated: 2026/05/03 12:17:09 by iyazykov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	pick_strat(t_Stack *stack_a, t_Stack *stack_b, t_Count_op *counter, t_Info *info)
+void	pick_strat(t_Stack *s_a, t_Stack *s_b, t_Count_op *c, t_Info *info)
 {
-	
 	if (info->strategy == 0)
-		simple(stack_a, stack_b, counter);
+		simple(s_a, s_b, c);
 	else if (info->strategy == 1)
-		chunk_sorting(stack_a, stack_b, counter);
+		chunk_sorting(s_a, s_b, c);
 	else if (info->strategy == 2)
-		radix_sort(stack_a, stack_b, counter);
-	else 
-		adaptive(stack_a, stack_b, counter, info);
+		radix_sort(s_a, s_b, c);
+	else
+		adaptive(s_a, s_b, c, info);
+	if (info->bench > 0)
+		bench(info, c);
 }

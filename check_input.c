@@ -3,39 +3,29 @@
 /*                                                        :::      ::::::::   */
 /*   check_input.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dshcherb <dshcherb@student.42.fr>          +#+  +:+       +#+        */
+/*   By: iyazykov <iyazykov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/16 12:59:05 by dshcherb          #+#    #+#             */
-/*   Updated: 2026/05/01 17:13:56 by dshcherb         ###   ########.fr       */
+/*   Updated: 2026/05/03 14:40:56 by iyazykov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int	ft_isspace(char c)
-{
-	if (c == ' ' || (c >= 9 && c <= 13))
-		return (1);
-	return (0);
-}
-
 static long	ft_atol(char *argv)
 {
-	int	sign;
+	int		sign;
 	long	res;
-	int	i;
+	int		i;
 
 	sign = 1;
 	res = 0;
 	i = 0;
 	while (ft_isspace(argv[i]))
 		i++;
-	if (argv[i] == '+' || argv[i] == '-')
-	{
-		if (argv[i] == '-')
-			sign = -1;
+	sign = check_sign(argv[i]);
+	if (sign == -1)
 		i++;
-	}
 	while (argv[i] >= '0' && argv[i] <= '9')
 	{
 		res = res * 10 + (argv[i] - '0');
@@ -51,7 +41,7 @@ static long	ft_atol(char *argv)
 
 static void	check_dup(char **argv, int start)
 {
-	int i;
+	int	i;
 
 	i = start;
 	while (argv[start])
@@ -65,22 +55,6 @@ static void	check_dup(char **argv, int start)
 		start++;
 		i = start;
 	}
-}
-
-int	is_flag(char **argv)
-{
-	int	i;
-	int	count_flags;
-
-	i = 0;
-	count_flags = 0;
-	while (argv[i])
-	{
-		if (ft_strncmp(argv[i], "--", 2) == 0)
-			count_flags++;
-		i++;
-	}
-	return (count_flags);
 }
 
 //Validation check for input and duplicates

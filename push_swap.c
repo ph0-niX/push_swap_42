@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dshcherb <dshcherb@student.42.fr>          +#+  +:+       +#+        */
+/*   By: iyazykov <iyazykov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/14 11:09:27 by dshcherb          #+#    #+#             */
-/*   Updated: 2026/05/01 17:05:05 by dshcherb         ###   ########.fr       */
+/*   Updated: 2026/05/03 15:14:44 by iyazykov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,12 @@ void	print_stack(t_Stack *stack)
 	write(1, "\n", 2);
 }
 
+void	free_and_return(t_Stack *stack)
+{
+	free_stack(stack);
+	exit (1);
+}
+
 int	main(int argc, char **argv)
 {
 	t_Stack		stack_a;
@@ -39,17 +45,11 @@ int	main(int argc, char **argv)
 	fill_stack(&stack_a, argc, argv);
 	set_disorder(&stack_a, &info);
 	if (info.disorder == 0)
-	{
-		free_stack(&stack_a);
-		return (0);
-	}
+		free_and_return(&stack_a);
 	put_index(&stack_a);
 	init_stack(&stack_b);
 	if (info.disorder == 0)
-	{
-		free_stack(&stack_a);
-		return (0);
-	}
+		free_and_return(&stack_a);
 	pick_strat(&stack_a, &stack_b, &count_op, &info);
 	free_stack(&stack_a);
 	free_stack(&stack_b);

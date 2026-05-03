@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   add_info.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dshcherb <dshcherb@student.42.fr>          +#+  +:+       +#+        */
+/*   By: iyazykov <iyazykov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/14 11:38:53 by dshcherb          #+#    #+#             */
-/*   Updated: 2026/04/24 12:24:37 by dshcherb         ###   ########.fr       */
+/*   Updated: 2026/05/03 13:04:37 by iyazykov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ static void	change_strat(t_Info *info, int strat_num, int *st_count)
 	*st_count += 1;
 }
 
-static void	check_flags(char *argv, t_Info *info, int *st_count, int *bench_count)
+static void	check_flags(char *argv, t_Info *info, int *st_count, int *b_count)
 {
 	if (ft_strncmp(argv, "--simple", 9) == 0)
 		change_strat(info, 0, st_count);
@@ -54,7 +54,7 @@ static void	check_flags(char *argv, t_Info *info, int *st_count, int *bench_coun
 	else if (ft_strncmp(argv, "--bench", 8) == 0)
 	{
 		info->bench = 1;
-		*bench_count += 1;
+		*b_count += 1;
 	}
 	else if (ft_strncmp(argv, "--", 2) == 0)
 		print_error();

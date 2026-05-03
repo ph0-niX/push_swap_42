@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dshcherb <dshcherb@student.42.fr>          +#+  +:+       +#+        */
+/*   By: iyazykov <iyazykov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/14 10:54:24 by dshcherb          #+#    #+#             */
-/*   Updated: 2026/05/01 16:42:06 by dshcherb         ###   ########.fr       */
+/*   Updated: 2026/05/03 13:32:03 by iyazykov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ typedef struct Node
 {
 	int			value;
 	int			index;
-	struct Node *next;
-	struct Node *prev;
+	struct Node	*next;
+	struct Node	*prev;
 }	t_Node;
 
 typedef struct Stack
@@ -70,6 +70,9 @@ void	rotate(t_Stack *stack);
 t_Node	*pop_bottom(t_Stack *stack);
 void	rev_rotate(t_Stack *stack);
 void	add_node_front(t_Stack *stack, t_Node *new_node);
+int		ft_isspace(char c);
+int		check_sign(char c);
+int		is_flag(char **argv);
 void	sa(t_Stack *stack_a, t_Count_op *counter);
 void	sb(t_Stack *stack_b, t_Count_op *counter);
 void	ss(t_Stack *stack_a, t_Stack *stack_b, t_Count_op *counter);
@@ -82,17 +85,18 @@ void	rra(t_Stack *stack_a, t_Count_op *counter);
 void	rrb(t_Stack *stack_b, t_Count_op *counter);
 void	rrr(t_Stack *stack_a, t_Stack *stack_b, t_Count_op *counter);
 void	chunk_sorting(t_Stack *stack_a, t_Stack *stack_b, t_Count_op *count_op);
-void	take_and_push_from_head_b(t_Stack *stack_a, t_Stack *stack_b, t_Count_op *count_op, int counter);
-void	take_and_push_from_tail_b(t_Stack *stack_a, t_Stack *stack_b, t_Count_op *count_op, int counter);
-void	take_and_push_from_head_a(t_Stack *stack_a, t_Stack *stack_b, t_Count_op *count_op, int counter);
-void	take_and_push_from_tail_a(t_Stack *stack_a, t_Stack *stack_b, t_Count_op *count_op, int counter);
+void	from_head_b(t_Stack *s_a, t_Stack *s_b, t_Count_op *c_op, int c);
+void	from_tail_b(t_Stack *s_a, t_Stack *s_b, t_Count_op *c_op, int c);
+void	from_head_a(t_Stack *s_a, t_Stack *s_b, t_Count_op *c_op, int c);
+void	from_tail_a(t_Stack *s_a, t_Stack *s_b, t_Count_op *c_op, int c);
 void	print_stack(t_Stack *stack);
 void	simple(t_Stack *stack_a, t_Stack *stack_b, t_Count_op *counter);
 float	compute_disorder(t_Stack *stack_a);
 void	radix_sort(t_Stack *stack_a, t_Stack *stack_b, t_Count_op *count_op);
 void	set_disorder(t_Stack *stack_a, t_Info *info);
-void	adaptive(t_Stack *stack_a, t_Stack *stack_b, t_Count_op *counter, t_Info *info);
-void	pick_strat(t_Stack *stack_a, t_Stack *stack_b, t_Count_op *counter, t_Info *info);
+void	adaptive(t_Stack *s_a, t_Stack *s_b, t_Count_op *counter, t_Info *info);
+void	pick_strat(t_Stack *s_a, t_Stack *s_b, t_Count_op *c, t_Info *info);
 void	free_stack(t_Stack *stack);
+void	bench(t_Info *info, t_Count_op *count_op);
 
 #endif

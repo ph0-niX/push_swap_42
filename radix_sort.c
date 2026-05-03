@@ -6,7 +6,7 @@
 /*   By: iyazykov <iyazykov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/29 11:47:28 by iyazykov          #+#    #+#             */
-/*   Updated: 2026/04/29 17:35:51 by iyazykov         ###   ########.fr       */
+/*   Updated: 2026/05/03 13:13:13 by iyazykov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	radix_sort(t_Stack *stack_a, t_Stack *stack_b, t_Count_op *count_op)
 {
 	int	max;
 	int	bit_pos;
-	int i;
+	int	i;
 
 	max = stack_a->size;
 	bit_pos = 0;

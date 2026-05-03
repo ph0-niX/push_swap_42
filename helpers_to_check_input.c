@@ -1,27 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_digit.c                                   :+:      :+:    :+:   */
+/*   helpers_to_check_input.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iyazykov <iyazykov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/31 14:00:51 by dshcherb          #+#    #+#             */
-/*   Updated: 2026/05/02 16:49:52 by iyazykov         ###   ########.fr       */
+/*   Created: 2026/05/03 13:30:24 by iyazykov          #+#    #+#             */
+/*   Updated: 2026/05/03 13:31:34 by iyazykov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "push_swap.h"
 
-int	print_digit(long n, int type, int fd)
+int	ft_isspace(char c)
 {
-	int	count;
+	if (c == ' ' || (c >= 9 && c <= 13))
+		return (1);
+	return (0);
+}
 
-	count = 0;
-	if (n < 0)
+int	check_sign(char c)
+{
+	if (c == '+' || c == '-')
 	{
-		count += write(fd, "-", 1);
-		n = -n;
+		if (c == '-')
+			return (-1);
 	}
-	ft_putnbr(n, &count, type, fd);
-	return (count);
+	return (1);
+}
+
+int	is_flag(char **argv)
+{
+	int	i;
+	int	count_flags;
+
+	i = 0;
+	count_flags = 0;
+	while (argv[i])
+	{
+		if (ft_strncmp(argv[i], "--", 2) == 0)
+			count_flags++;
+		i++;
+	}
+	return (count_flags);
 }

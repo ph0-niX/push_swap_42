@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   chunk_based_sorting.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dshcherb <dshcherb@student.42.fr>          +#+  +:+       +#+        */
+/*   By: iyazykov <iyazykov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/24 11:56:14 by iyazykov          #+#    #+#             */
-/*   Updated: 2026/05/01 16:23:17 by dshcherb         ###   ########.fr       */
+/*   Updated: 2026/05/03 11:21:00 by iyazykov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,11 +61,11 @@ void	find_elem_from_chunk(t_Stack *s_a, t_Stack *s_b, t_Count_op *count_op)
 		count_head = take_count(s_a, 1, chunk_size, 1);
 		count_tail = take_count(s_a, 0, chunk_size, 1);
 		if (count_head <= count_tail)
-			take_and_push_from_head_a(s_a, s_b, count_op, count_head);
+			from_head_a(s_a, s_b, count_op, count_head);
 		else if (count_head > count_tail)
-			take_and_push_from_tail_a(s_a, s_b, count_op, count_tail);
+			from_tail_a(s_a, s_b, count_op, count_tail);
 		if (s_b->head->index < (chunk_size / 2))
-		 	rb(s_b, count_op);
+			rb(s_b, count_op);
 		chunk_size += 1;
 	}
 }
@@ -80,9 +80,9 @@ void	find_max_elem(t_Stack *stack_a, t_Stack *stack_b, t_Count_op *count_op)
 		count_head = take_count(stack_b, 1, stack_b->size, 0);
 		count_tail = take_count(stack_b, 0, stack_b->size, 0);
 		if (count_head <= count_tail)
-			take_and_push_from_head_b(stack_a, stack_b, count_op, count_head);
+			from_head_b(stack_a, stack_b, count_op, count_head);
 		else if (count_head > count_tail)
-			take_and_push_from_tail_b(stack_a, stack_b, count_op, count_tail);
+			from_tail_b(stack_a, stack_b, count_op, count_tail);
 	}
 }
 

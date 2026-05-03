@@ -1,8 +1,8 @@
 NAME = push_swap
 CC = cc
-# CFLAGS = -Wextra -Werror -Wall -Iinclude -g
-# CFLAGS = -Wextra -Werror -Wall -g
-CFLAGS = -g
+# CFLAGS = -Wextra -Werror -Wall -Iinclude
+CFLAGS = -Wextra -Werror -Wall -g
+# CFLAGS = -g
 
 SRCS = push_swap.c \
 	add_info.c \
@@ -30,7 +30,9 @@ SRCS = push_swap.c \
 	compute_disorder.c \
 	strat_adaptive.c \
 	pick_strat.c \
-	free_stack.c
+	free_stack.c \
+	bench.c \
+	helpers_to_check_input.c
 
 OBJS = ${SRCS:.c=.o}
 

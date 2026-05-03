@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   basic_stack_ops_1.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dshcherb <dshcherb@student.42.fr>          +#+  +:+       +#+        */
+/*   By: iyazykov <iyazykov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/24 11:14:43 by dshcherb          #+#    #+#             */
-/*   Updated: 2026/04/28 16:18:24 by dshcherb         ###   ########.fr       */
+/*   Updated: 2026/05/03 13:12:47 by iyazykov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,8 +50,8 @@ void	swap(t_Stack *stack)
 {
 	int	elem1;
 	int	elem2;
-	int index1;
-	int index2;
+	int	index1;
+	int	index2;
 
 	if (stack->size < 2)
 		return ;

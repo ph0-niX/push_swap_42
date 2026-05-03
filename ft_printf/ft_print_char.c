@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_char.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dshcherb <dshcherb@student.42.fr>          +#+  +:+       +#+        */
+/*   By: iyazykov <iyazykov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/31 13:59:03 by dshcherb          #+#    #+#             */
-/*   Updated: 2026/03/31 13:59:39 by dshcherb         ###   ########.fr       */
+/*   Updated: 2026/05/02 16:06:48 by iyazykov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	print_char(int c)
+int	print_char(int c, int fd)
 {
-	return (write(1, &c, 1));
+	return (write(fd, &c, 1));
 }

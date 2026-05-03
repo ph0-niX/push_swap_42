@@ -3,25 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_str.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dshcherb <dshcherb@student.42.fr>          +#+  +:+       +#+        */
+/*   By: iyazykov <iyazykov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/31 13:59:56 by dshcherb          #+#    #+#             */
-/*   Updated: 2026/03/31 15:56:02 by dshcherb         ###   ########.fr       */
+/*   Updated: 2026/05/02 16:23:59 by iyazykov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	print_str(char *str)
+int	print_str(char *str, int fd)
 {
 	int	count;
 
 	if (!str)
-		return (write(1, "(null)", 6));
+		return (write(fd, "(null)", 6));
 	count = 0;
 	while (*str)
 	{
-		print_char((int)*str);
+		print_char((int)*str, fd);
 		count++;
 		str++;
 	}

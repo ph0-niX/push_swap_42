@@ -3,31 +3,33 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dshcherb <dshcherb@student.42.fr>          +#+  +:+       +#+        */
+/*   By: iyazykov <iyazykov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/31 14:05:54 by dshcherb          #+#    #+#             */
-/*   Updated: 2026/04/14 16:51:16 by dshcherb         ###   ########.fr       */
+/*   Updated: 2026/05/03 13:13:52 by iyazykov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putnbr(unsigned long n, unsigned int base, int *count, char type)
+void	ft_putnbr(unsigned long n, int *count, int type, int fd)
 {
-	char	*symbols;
+	char			*symbols;
+	unsigned long	base;
 
-	if (base == 10)
+	if (type == 3)
+		symbols = "0123456789ABCDEF";
+	else if (type == 1)
 		symbols = "0123456789";
 	else
-	{
-		if (type == 'X')
-			symbols = "0123456789ABCDEF";
-		else
-			symbols = "0123456789abcdef";
-	}
+		symbols = "0123456789abcdef";
+	if (type == 1)
+		base = 10;
+	else
+		base = 16;
 	if (n >= base)
-		ft_putnbr(n / base, base, count, type);
-	*count += write(1, &symbols[n % base], 1);
+		ft_putnbr(n / base, count, type, fd);
+	*count += write(fd, &symbols[n % base], 1);
 }
 
 // int main(void)
