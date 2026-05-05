@@ -1,8 +1,6 @@
 NAME = push_swap
 CC = cc
-# CFLAGS = -Wextra -Werror -Wall -Iinclude
-CFLAGS = -Wextra -Werror -Wall -g
-# CFLAGS = -g
+CFLAGS = -Wextra -Werror -Wall
 
 SRCS = push_swap.c \
 	add_info.c \

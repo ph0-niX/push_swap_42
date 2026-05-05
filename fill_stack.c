@@ -6,7 +6,7 @@
 /*   By: dshcherb <dshcherb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/17 13:43:56 by dshcherb          #+#    #+#             */
-/*   Updated: 2026/04/24 12:25:54 by dshcherb         ###   ########.fr       */
+/*   Updated: 2026/05/05 14:51:58 by dshcherb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,11 @@ void	fill_stack(t_Stack *stack, int argc, char **argv)
 	while (tmp_argv[i])
 	{
 		node = new_node(ft_atoi(tmp_argv[i]));
+		if (node == NULL)
+		{
+			free_stack(stack);
+			exit (1);
+		}
 		add_node_back(stack, node);
 		i++;
 	}

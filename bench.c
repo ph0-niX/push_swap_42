@@ -3,16 +3,26 @@
 /*                                                        :::      ::::::::   */
 /*   bench.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: iyazykov <iyazykov@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dshcherb <dshcherb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/01 13:46:51 by iyazykov          #+#    #+#             */
-/*   Updated: 2026/05/03 11:25:44 by iyazykov         ###   ########.fr       */
+/*   Updated: 2026/05/05 12:28:20 by dshcherb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-char	*take_strat_for_bench(int start)
+char	*take_algorhitm_complexity(int strat)
+{
+	if (strat == 1)
+		return ("Adaptive / O(n²)");
+	else if (strat == 2)
+		return ("Adaptive / O(n√n)");
+	else
+		return ("Adaptive / O(n log n)");
+}
+
+char	*take_strat_for_bench(int start, int adapt_strat)
 {
 	if (start == 0)
 		return ("Simple / O(n²)");
@@ -21,14 +31,14 @@ char	*take_strat_for_bench(int start)
 	else if (start == 2)
 		return ("Complex / O(n log n)");
 	else
-		return ("Adaptive");
+		return (take_algorhitm_complexity(adapt_strat));
 }
 
 void	bench(t_Info *info, t_Count_op *count_op)
 {
 	char	*str_strat;
 
-	str_strat = take_strat_for_bench(info->strategy);
+	str_strat = take_strat_for_bench(info->strategy, info->adaptive_strat);
 	ft_printf("~[bench] disorder: %f\n", info->disorder);
 	ft_printf("~[bench] strategy: %s\n", str_strat);
 	ft_printf("~[bench] total_ops: %i\n", count_op->total_operations);

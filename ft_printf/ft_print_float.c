@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_float.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: iyazykov <iyazykov@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dshcherb <dshcherb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/01 16:01:12 by iyazykov          #+#    #+#             */
-/*   Updated: 2026/05/03 13:28:39 by iyazykov         ###   ########.fr       */
+/*   Updated: 2026/05/05 12:33:09 by dshcherb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,11 @@ int	print_float(double n, int type, int fd)
 	count += write(fd, ".", 1);
 	if (double_part == 0)
 		count += write(fd, "00", 2);
+	else if (double_part < 10)
+	{
+		count += write(fd, "0", 1);
+		count += print_digit(double_part, type, fd);
+	}
 	else
 		count += print_digit(double_part, type, fd);
 	count += write(fd, "%", 1);

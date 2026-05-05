@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   add_info.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: iyazykov <iyazykov@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dshcherb <dshcherb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/14 11:38:53 by dshcherb          #+#    #+#             */
-/*   Updated: 2026/05/03 13:04:37 by iyazykov         ###   ########.fr       */
+/*   Updated: 2026/05/05 12:20:42 by dshcherb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ static void	init_info(t_Info *info)
 	info->bench = 0;
 	info->disorder = 0;
 	info->strategy = 3;
+	info->adaptive_strat = 0;
 }
 
 void	init_count(t_Count_op *counter)
