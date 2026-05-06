@@ -6,24 +6,11 @@
 /*   By: dshcherb <dshcherb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/14 11:09:27 by dshcherb          #+#    #+#             */
-/*   Updated: 2026/05/05 14:42:20 by dshcherb         ###   ########.fr       */
+/*   Updated: 2026/05/06 17:00:44 by dshcherb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	print_stack(t_Stack *stack)
-{
-	t_Node	*tmp;
-
-	tmp = stack->head;
-	while (tmp)
-	{
-		ft_printf("value -> %d; index -> %i\n", tmp->value, tmp->index);
-		tmp = tmp->next;
-	}
-	write(1, "\n", 2);
-}
 
 void	free_and_return(t_Stack *stack, t_Info *info, t_Count_op *count)
 {
